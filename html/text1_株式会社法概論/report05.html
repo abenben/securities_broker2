@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>株式と株主の権利</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            overflow: hidden;
+            background: linear-gradient(120deg, #2C5282 0%, #1A365D 100%);
+            color: white;
+            position: relative;
+        }
+        .title {
+            font-size: 36px;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0px 2px 6px rgba(0,0,0,0.3);
+        }
+        .card {
+            background-color: rgba(44, 82, 130, 0.5);
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+        }
+        .highlight {
+            color: #FFC107;
+            font-weight: bold;
+        }
+        .comparison-table th, .comparison-table td {
+            padding: 8px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .comparison-table th {
+            background-color: rgba(44, 82, 130, 0.8);
+        }
+        .comparison-table tr:nth-child(odd) td {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        .comparison-table tr:nth-child(even) td {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .important-box {
+            background-color: rgba(237, 137, 54, 0.15);
+            border-left: 4px solid #ED8936;
+        }
+        .rights-card {
+            background-color: rgba(44, 82, 130, 0.3);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .rights-card:hover {
+            background-color: rgba(44, 82, 130, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide p-10 flex flex-col">
+        <!-- Header -->
+        <div class="mb-4">
+            <h1 class="title">第3章：株式と株主の権利</h1>
+            <div class="w-24 h-1 bg-yellow-400 rounded mt-2"></div>
+        </div>
+
+        <!-- Main Content Container -->
+        <div class="flex flex-grow">
+            <!-- Left Column: Main Content -->
+            <div class="w-8/12 pr-4 flex flex-col space-y-4">
+                <!-- 1. 株式の分割・併合・無償割当て -->
+                <div class="card rounded-lg p-4 border-l-4 border-blue-400">
+                    <h2 class="text-xl font-bold mb-2 flex items-center text-blue-300">
+                        <i class="fas fa-copy mr-2"></i>
+                        株式の分割・併合・無償割当て
+                    </h2>
+
+                    <table class="comparison-table w-full text-sm">
+                        <thead>
+                            <tr>
+                                <th>種類</th>
+                                <th>内容</th>
+                                <th>価値への影響</th>
+                                <th>決議方法</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="font-bold text-blue-300">株式の分割</td>
+                                <td>1株を複数の株式に分ける<br>(例：1株→2株)</td>
+                                <td>1株当たりの<span class="highlight">価値が小さく</span>なる</td>
+                                <td><span class="highlight">取締役会</span>の決議</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold text-yellow-300">株式の併合</td>
+                                <td>複数株を少ない数にまとめる<br>(例：2株→1株)</td>
+                                <td>1株当たりの<span class="highlight">価値が大きく</span>なる</td>
+                                <td>株主総会の<span class="highlight">特別決議</span></td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold text-blue-300">株式無償割当て</td>
+                                <td>追加払込みなしで株式を割当</td>
+                                <td><span class="highlight">自己株式は割当対象外</span></td>
+                                <td><span class="highlight">取締役会</span>の決議</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 2. 単元株制度 -->
+                <div class="card rounded-lg p-4 border-l-4 border-green-400">
+                    <h2 class="text-xl font-bold mb-2 flex items-center text-green-300">
+                        <i class="fas fa-layer-group mr-2"></i>
+                        単元株制度
+                    </h2>
+
+                    <div class="flex">
+                        <div class="w-1/2 pr-2">
+                            <div class="bg-green-900 bg-opacity-20 p-3 rounded-lg mb-2">
+                                <p class="font-bold text-green-300 mb-1">単元株とは</p>
+                                <p class="text-sm">一定株数を<span class="highlight">1単元</span>として、1単元ごとに<span class="highlight">1個の議決権</span>を認める制度</p>
+                            </div>
+
+                            <div class="bg-green-900 bg-opacity-20 p-3 rounded-lg">
+                                <p class="font-bold text-green-300 mb-1">設定制限</p>
+                                <p class="text-sm">単元株数は<span class="highlight">1,000以下</span>かつ発行済株式総数の<span class="highlight">200分の1以下</span></p>
+                            </div>
+                        </div>
+
+                        <div class="w-1/2 pl-2">
+                            <div class="bg-blue-900 bg-opacity-20 p-3 rounded-lg">
+                                <p class="font-bold text-blue-300 mb-1">単元未満株式の権利</p>
+                                <ul class="list-disc pl-5 text-sm space-y-1">
+                                    <li><span class="highlight">議決権なし</span>（株主総会の招集通知なし）</li>
+                                    <li><span class="highlight">経済的権利あり</span>（配当請求権など）</li>
+                                    <li>会社に<span class="highlight">買取請求</span>が可能</li>
+                                    <li>定款に定めがあれば会社から買増し可能</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. 株式の種類と株主の権利 -->
+                <div class="card rounded-lg p-4 border-l-4 border-purple-400">
+                    <h2 class="text-xl font-bold mb-2 flex items-center text-purple-300">
+                        <i class="fas fa-certificate mr-2"></i>
+                        株式の種類と株主の権利
+                    </h2>
+
+                    <div class="flex space-x-2">
+                        <!-- 種類株式 -->
+                        <div class="w-1/2 pr-2">
+                            <div class="bg-purple-900 bg-opacity-20 p-3 rounded-lg mb-2">
+                                <p class="font-bold text-purple-300 mb-1">剰余金分配に関する種類株式</p>
+                                <ul class="list-disc pl-5 text-sm space-y-1">
+                                    <li><span class="highlight">優先株</span>：一定率の配当を優先的に受ける</li>
+                                    <li><span class="highlight">普通株</span>：一般的に発行される株式</li>
+                                    <li><span class="highlight">後配株</span>：普通株配当後に残りから配当</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-orange-900 bg-opacity-20 p-3 rounded-lg">
+                                <p class="font-bold text-orange-300 mb-1">議決権制限株式</p>
+                                <p class="text-sm">議決権がないか一部に限定される株式</p>
+                                <p class="text-sm font-bold">公開会社では発行済株式総数の<span class="text-red-400">2分の1まで</span></p>
+                            </div>
+                        </div>
+
+                        <!-- 株主の権利 -->
+                        <div class="w-1/2 pl-2">
+                            <div class="flex space-x-2 mb-2">
+                                <div class="rights-card p-2 flex-1">
+                                    <p class="font-bold text-blue-300 text-center">自益権</p>
+                                    <p class="text-xs text-center">株主個人の利益に関する権利</p>
+                                    <p class="text-xs text-center text-blue-200">剰余金配当請求権など</p>
+                                </div>
+                                <div class="rights-card p-2 flex-1">
+                                    <p class="font-bold text-blue-300 text-center">共益権</p>
+                                    <p class="text-xs text-center">株主全体の利益に影響する権利</p>
+                                    <p class="text-xs text-center text-blue-200">議決権、訴権など</p>
+                                </div>
+                            </div>
+
+                            <div class="flex space-x-2">
+                                <div class="rights-card p-2 flex-1">
+                                    <p class="font-bold text-yellow-300 text-center">少数株主権</p>
+                                    <p class="text-xs text-center">一定割合以上の株式保有が必要</p>
+                                    <p class="text-xs text-center text-yellow-200">株主総会招集請求権など</p>
+                                </div>
+                                <div class="rights-card p-2 flex-1">
+                                    <p class="font-bold text-yellow-300 text-center">単独株主権</p>
+                                    <p class="text-xs text-center">1株からでも行使可能な権利</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Important Points -->
+            <div class="w-4/12 pl-4">
+                <div class="important-box p-4 rounded-lg mb-4">
+                    <div class="flex items-center mb-2">
+                        <i class="fas fa-exclamation-circle text-orange-400 text-xl mr-2"></i>
+                        <h3 class="font-bold text-orange-400">重要ポイント</h3>
+                    </div>
+                    <ul class="list-disc pl-5 text-sm space-y-2">
+                        <li><span class="text-orange-300 font-bold">株式分割</span>：<span class="highlight">取締役会決議</span></li>
+                        <li><span class="text-orange-300 font-bold">株式併合</span>：<span class="highlight">株主総会特別決議</span></li>
+                        <li><span class="text-orange-300 font-bold">単元未満株式</span>：議決権なし、経済的権利あり</li>
+                        <li><span class="text-orange-300 font-bold">議決権制限株式</span>上限：公開会社では発行済株式総数の<span class="highlight">2分の1まで</span></li>
+                        <li><span class="text-orange-300 font-bold">自益権と共益権</span>の違い</li>
+                        <li><span class="text-orange-300 font-bold">株主平等の原則</span>：同じ種類の株式には同じ内容の権利</li>
+                    </ul>
+                </div>
+
+                <div class="bg-blue-800 bg-opacity-40 p-4 rounded-lg mb-4">
+                    <div class="flex items-center mb-2">
+                        <i class="fas fa-lightbulb text-yellow-300 text-xl mr-2"></i>
+                        <h3 class="font-bold text-yellow-300">試験対策</h3>
+                    </div>
+                    <ul class="list-disc pl-5 text-sm">
+                        <li>株式分割と株式併合の<span class="highlight">決議方法の違い</span>は必須</li>
+                        <li>種類株式の種類と特徴を理解する</li>
+                        <li>少数株主権が行使できる具体的権利を覚える</li>
+                        <li>単元株制度の基本的仕組みを理解する</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-r from-blue-900 to-purple-900 p-4 rounded-lg">
+                    <h3 class="font-bold text-white mb-1 flex items-center">
+                        <i class="fas fa-balance-scale mr-2"></i>
+                        株主平等の原則
+                    </h3>
+                    <p class="text-sm">同じ種類の株式には、すべて同じ内容の権利があり、株主は<span class="highlight">持株数に比例</span>して会社に対する権利を持つ</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-4 flex justify-between items-center text-sm text-blue-200">
+            <div>株式会社法概論 - 証券外務員二種試験対策</div>
+            <div>5</div>
+        </div>
+    </div>
+</body>
+</html>

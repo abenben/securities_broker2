@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>株式会社の特色と設立</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11.6.0/dist/mermaid.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            overflow: hidden;
+            background: linear-gradient(120deg, #2C5282 0%, #1A365D 100%);
+            color: white;
+            position: relative;
+        }
+        .title {
+            font-size: 36px;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0px 2px 6px rgba(0,0,0,0.3);
+        }
+        .feature-card {
+            background-color: rgba(44, 82, 130, 0.5);
+            border-left: 5px solid #63B3ED;
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+        }
+        .process-step {
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .process-step:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .highlight {
+            color: #FFC107;
+            font-weight: bold;
+        }
+        .important-box {
+            background-color: rgba(237, 137, 54, 0.15);
+            border-left: 4px solid #ED8936;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide p-10 flex flex-col">
+        <!-- Header -->
+        <div class="mb-6">
+            <h1 class="title">第2章：株式会社の特色と設立</h1>
+            <div class="w-24 h-1 bg-yellow-400 rounded mt-2"></div>
+        </div>
+
+        <div class="flex flex-grow">
+            <!-- Main Content -->
+            <div class="w-full flex flex-col">
+                <!-- 株式会社の特色 Section -->
+                <div class="mb-6">
+                    <h2 class="text-2xl font-bold mb-4 flex items-center text-blue-300">
+                        <i class="fas fa-star mr-3"></i>
+                        株式会社の特色
+                    </h2>
+
+                    <div class="grid grid-cols-3 gap-4">
+                        <!-- 特色1: 株式の発行 -->
+                        <div class="feature-card p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center mr-3">
+                                    <i class="fas fa-file-invoice-dollar text-white"></i>
+                                </div>
+                                <h3 class="text-lg font-bold">株式の発行</h3>
+                            </div>
+                            <ul class="list-disc pl-6 text-sm space-y-1">
+                                <li>株式発行により<span class="highlight">広い範囲から資金調達</span>が可能</li>
+                                <li>株主数の制限なし</li>
+                                <li>大規模な事業展開が可能</li>
+                            </ul>
+                        </div>
+
+                        <!-- 特色2: 株主の有限責任 -->
+                        <div class="feature-card p-4 rounded-lg bg-orange-900 bg-opacity-30 border-orange-400">
+                            <div class="flex items-center mb-2">
+                                <div class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center mr-3">
+                                    <i class="fas fa-shield-alt text-white"></i>
+                                </div>
+                                <h3 class="text-lg font-bold text-orange-300">株主の有限責任</h3>
+                            </div>
+                            <ul class="list-disc pl-6 text-sm space-y-1">
+                                <li>株主には<span class="highlight">追加出資の義務がない</span></li>
+                                <li>会社債務に対して株主は責任を負わない</li>
+                                <li><span class="text-orange-300 font-bold">株主有限責任の原則</span>が最重要</li>
+                            </ul>
+                        </div>
+
+                        <!-- 特色3: 資本金 -->
+                        <div class="feature-card p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center mr-3">
+                                    <i class="fas fa-coins text-white"></i>
+                                </div>
+                                <h3 class="text-lg font-bold">資本金</h3>
+                            </div>
+                            <ul class="list-disc pl-6 text-sm space-y-1">
+                                <li><span class="highlight">資本金不変の原則</span>：勝手に減らせない</li>
+                                <li><span class="highlight">資本維持の原則</span>：相当財産の保持義務</li>
+                                <li>払込金額の<span class="highlight">2分の1以上</span>は資本金に組入れ</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 設立の手続き Section -->
+                <div>
+                    <h2 class="text-2xl font-bold mb-4 flex items-center text-blue-300">
+                        <i class="fas fa-tasks mr-3"></i>
+                        設立の手続き
+                    </h2>
+
+                    <div class="flex flex-wrap">
+                        <!-- Left: Steps -->
+                        <div class="w-2/3 pr-4">
+                            <div class="mermaid-wrapper">
+                                <div class="mermaid bg-white bg-opacity-10 p-4 rounded-lg" style="background-color: rgba(255,255,255,0.05);">
+flowchart TD
+    A[1.定款作成] --> B[2.出資金の払込]
+    B --> C[3.取締役選任]
+    C --> D[4.取締役調査]
+    D --> E[5.登記]
+    E --> F[法人格取得]
+
+    style A fill:#4299e1,color:#fff
+    style B fill:#4299e1,color:#fff
+    style C fill:#4299e1,color:#fff
+    style D fill:#4299e1,color:#fff
+    style E fill:#4299e1,color:#fff
+    style F fill:#ed8936,color:#fff,stroke:#ed8936
+                                </div>
+                            </div>
+
+                            <!-- Key points about steps -->
+                            <div class="grid grid-cols-2 gap-3 mt-4">
+                                <div class="process-step p-3 rounded-lg">
+                                    <h4 class="font-bold text-blue-300">1. 定款の作成</h4>
+                                    <p class="text-sm">発起人が作成し<span class="highlight">公証人の認証</span>が必須</p>
+                                </div>
+                                <div class="process-step p-3 rounded-lg bg-orange-900 bg-opacity-20 border-l-4 border-orange-400">
+                                    <h4 class="font-bold text-orange-300">2. 設立の種類</h4>
+                                    <p class="text-sm"><span class="highlight">発起設立</span>：発起人だけで全株式引受</p>
+                                    <p class="text-sm"><span class="highlight">募集設立</span>：一部を株主募集で引受</p>
+                                </div>
+                                <div class="process-step p-3 rounded-lg">
+                                    <h4 class="font-bold text-blue-300">3-4. 取締役選任・調査</h4>
+                                    <p class="text-sm">取締役を選任し、設立の<span class="highlight">適法性を調査</span></p>
+                                </div>
+                                <div class="process-step p-3 rounded-lg">
+                                    <h4 class="font-bold text-blue-300">5. 登記</h4>
+                                    <p class="text-sm">登記により<span class="highlight">法人格</span>が認められる</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right: Important Points -->
+                        <div class="w-1/3">
+                            <div class="important-box p-4 rounded-lg mb-4">
+                                <div class="flex items-center mb-2">
+                                    <i class="fas fa-exclamation-circle text-orange-400 text-xl mr-2"></i>
+                                    <h3 class="font-bold text-orange-400">重要ポイント</h3>
+                                </div>
+                                <ul class="list-disc pl-5 text-sm space-y-2">
+                                    <li><span class="text-orange-300 font-bold">株主有限責任の原則</span>は株式会社の最も重要な特徴</li>
+                                    <li><span class="highlight">発起設立</span>と<span class="highlight">募集設立</span>の違いを明確に理解する</li>
+                                    <li>設立の無効は<span class="highlight">株主と取締役</span>のみが設立登記から<span class="highlight">2年以内</span>に訴えで主張可能</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-blue-800 bg-opacity-40 p-4 rounded-lg">
+                                <div class="flex items-center mb-2">
+                                    <i class="fas fa-lightbulb text-yellow-300 text-xl mr-2"></i>
+                                    <h3 class="font-bold text-yellow-300">試験対策</h3>
+                                </div>
+                                <ul class="list-disc pl-5 text-sm">
+                                    <li>株式会社の基本的特色は必ず出題される</li>
+                                    <li>設立手続きの流れと各ステップの要件を覚える</li>
+                                    <li>特に<span class="highlight">設立無効の訴え</span>の制限（2年）を記憶</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-6 flex justify-between items-center text-sm text-blue-200">
+            <div>株式会社法概論 - 証券外務員二種試験対策</div>
+            <div>4</div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            mermaid.initialize({
+                startOnLoad: true,
+                theme: 'dark',
+                securityLevel: 'loose',
+                themeVariables: {
+                    primaryColor: '#2C5282',
+                    primaryTextColor: '#fff',
+                    primaryBorderColor: '#63B3ED',
+                    lineColor: '#63B3ED',
+                    secondaryColor: '#ED8936',
+                    tertiaryColor: '#1A365D'
+                }
+            });
+        });
+    </script>
+</body>
+</html>

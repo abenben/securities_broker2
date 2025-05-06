@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>株式会社の機関</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11.6.0/dist/mermaid.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            overflow: hidden;
+            background: linear-gradient(120deg, #2C5282 0%, #1A365D 100%);
+            color: white;
+            position: relative;
+        }
+        .title {
+            font-size: 36px;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0px 2px 6px rgba(0,0,0,0.3);
+        }
+        .section-card {
+            background-color: rgba(44, 82, 130, 0.3);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        .section-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.2);
+        }
+        .highlight {
+            color: #FFC107;
+            font-weight: bold;
+        }
+        .important-box {
+            background-color: rgba(237, 137, 54, 0.15);
+            border-left: 4px solid #ED8936;
+        }
+        .table-header {
+            background-color: rgba(49, 130, 206, 0.7);
+        }
+        .table-row-even {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .table-row-odd {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        .resolution-block {
+            position: relative;
+            overflow: hidden;
+        }
+        .resolution-block::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -20px;
+            width: 20px;
+            height: 100%;
+            background: inherit;
+            filter: blur(10px);
+        }
+        .feature-box {
+            border-left: 3px solid;
+            transition: all 0.3s ease;
+        }
+        .feature-box:hover {
+            transform: translateX(3px);
+        }
+        .icon-circle {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide p-8 flex flex-col">
+        <!-- Header -->
+        <div class="mb-4">
+            <h1 class="title">第6章：株式会社の機関</h1>
+            <div class="w-24 h-1 bg-yellow-400 rounded mt-2"></div>
+        </div>
+
+        <!-- Organization Chart -->
+        <div class="w-full mb-3">
+            <div class="mermaid" style="background-color: rgba(255,255,255,0.05); padding: 8px; border-radius: 8px;">
+flowchart TD
+    A[株主総会] --> B[取締役]
+    A --> C[取締役会]
+    C --> D[代表取締役]
+    C --> E[業務執行取締役]
+    A --> F[監査役]
+    A --> G[監査役会]
+    A --> H[会計監査人]
+    A --> I[監査等委員会]
+    A --> J[指名委員会等]
+
+    style A fill:#ED8936,color:#fff,stroke:#ED8936
+    style B fill:#4299e1,color:#fff
+    style C fill:#4299e1,color:#fff
+    style D fill:#4299e1,color:#fff
+    style E fill:#4299e1,color:#fff
+    style F fill:#68D391,color:#111
+    style G fill:#68D391,color:#111
+    style H fill:#9F7AEA,color:#fff
+    style I fill:#fc8181,color:#fff
+    style J fill:#fc8181,color:#fff
+            </div>
+        </div>
+
+        <!-- Main Content Container -->
+        <div class="flex flex-grow">
+            <!-- Left Column: Main Content -->
+            <div class="w-9/12 pr-4 grid grid-cols-2 gap-3">
+                <!-- 1. 株式会社の機関の概要 -->
+                <div class="section-card rounded-lg p-3 border-l-4 border-blue-400">
+                    <h2 class="text-lg font-bold mb-2 flex items-center text-blue-300">
+                        <i class="fas fa-sitemap mr-2"></i>
+                        株式会社の機関の概要
+                    </h2>
+
+                    <p class="text-sm mb-2">株式会社は<span class="highlight">株主総会</span>で基本的事項を決定し、<span class="highlight">取締役・取締役会</span>が執行、<span class="highlight">監査機関</span>がチェックする</p>
+
+                    <div class="bg-blue-900 bg-opacity-20 p-2 rounded-lg">
+                        <p class="font-bold text-sm text-blue-300 mb-1">必ず必要な機関</p>
+                        <div class="flex space-x-2">
+                            <div class="flex-1 bg-blue-800 bg-opacity-40 rounded p-1 text-center text-sm">
+                                <i class="fas fa-users mr-1"></i>株主総会
+                            </div>
+                            <div class="flex-1 bg-blue-800 bg-opacity-40 rounded p-1 text-center text-sm">
+                                <i class="fas fa-user-tie mr-1"></i>取締役
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. 株主総会 -->
+                <div class="section-card rounded-lg p-3 border-l-4 border-orange-400">
+                    <h2 class="text-lg font-bold mb-1 flex items-center text-orange-300">
+                        <i class="fas fa-users mr-2"></i>
+                        株主総会
+                    </h2>
+
+                    <!-- 総会の種類 -->
+                    <div class="flex space-x-2 mb-2">
+                        <div class="flex-1 bg-orange-900 bg-opacity-20 rounded p-1 text-center text-xs">
+                            <span class="font-bold">定時総会</span>：毎決算期に1回
+                        </div>
+                        <div class="flex-1 bg-orange-900 bg-opacity-20 rounded p-1 text-center text-xs">
+                            <span class="font-bold">臨時総会</span>：必要に応じて
+                        </div>
+                    </div>
+
+                    <!-- 招集手続き -->
+                    <div class="text-xs mb-1">
+                        <span class="font-bold text-orange-300">招集通知</span>：<span class="highlight">2週間前まで</span>（公開会社でない場合は1週間）
+                    </div>
+
+                    <!-- 議決権 -->
+                    <div class="text-xs mb-1">
+                        <span class="font-bold text-orange-300">議決権</span>：<span class="highlight">1株1議決権</span>の原則（単元株制度では1単元1議決権）
+                    </div>
+
+                    <!-- 決議の種類 -->
+                    <p class="text-xs font-bold text-orange-300 mb-1">決議の種類</p>
+                    <div class="flex space-x-1">
+                        <div class="resolution-block flex-1 bg-blue-800 bg-opacity-20 rounded px-1 py-0.5 text-xs">
+                            <span class="font-bold">普通決議</span>：過半数出席、過半数賛成
+                        </div>
+                        <div class="resolution-block flex-1 bg-yellow-800 bg-opacity-20 rounded px-1 py-0.5 text-xs">
+                            <span class="font-bold">特別決議</span>：過半数出席、<span class="highlight">2/3</span>賛成
+                        </div>
+                        <div class="resolution-block flex-1 bg-red-800 bg-opacity-20 rounded px-1 py-0.5 text-xs">
+                            <span class="font-bold">特殊決議</span>：頭数<span class="highlight">1/2</span>、議決権<span class="highlight">2/3</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. 取締役と取締役会 -->
+                <div class="section-card rounded-lg p-3 border-l-4 border-blue-500">
+                    <h2 class="text-lg font-bold mb-1 flex items-center text-blue-300">
+                        <i class="fas fa-user-tie mr-2"></i>
+                        取締役と取締役会
+                    </h2>
+
+                    <div class="grid grid-cols-2 gap-2 mb-2">
+                        <div class="feature-box pl-2 border-blue-400 text-xs">
+                            <p class="font-bold text-blue-300 mb-0.5">必要人数</p>
+                            <p>• 取締役会あり：<span class="highlight">3人以上</span></p>
+                            <p>• 取締役会なし：1人で可</p>
+                        </div>
+
+                        <div class="feature-box pl-2 border-blue-400 text-xs">
+                            <p class="font-bold text-blue-300 mb-0.5">任期</p>
+                            <p>• 原則<span class="highlight">2年以内</span></p>
+                            <p>• 非公開：定款で<span class="highlight">10年まで</span>可</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-blue-900 bg-opacity-20 p-1.5 rounded-lg mb-1.5">
+                        <p class="font-bold text-xs text-blue-300 mb-0.5">取締役会の役割</p>
+                        <div class="flex space-x-1 text-xs">
+                            <div class="flex-1 bg-blue-800 bg-opacity-40 rounded p-1 text-center">
+                                業務執行の決定
+                            </div>
+                            <div class="flex-1 bg-blue-800 bg-opacity-40 rounded p-1 text-center">
+                                職務執行の監督
+                            </div>
+                            <div class="flex-1 bg-blue-800 bg-opacity-40 rounded p-1 text-center">
+                                代表取締役選定
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-xs">
+                        <span class="font-bold text-blue-300">社外取締役</span>：その会社や子会社の業務執行者でない、<span class="highlight">過去10年間</span>もそうでなかった取締役
+                    </div>
+                </div>
+
+                <!-- 4. 監査機関 -->
+                <div class="section-card rounded-lg p-3 border-l-4 border-green-500">
+                    <h2 class="text-lg font-bold mb-1 flex items-center text-green-300">
+                        <i class="fas fa-search mr-2"></i>
+                        監査機関
+                    </h2>
+
+                    <div class="flex flex-col space-y-1.5">
+                        <div class="feature-box pl-2 border-green-400 text-xs">
+                            <p class="font-bold text-green-300 mb-0.5">監査役</p>
+                            <p>• 取締役の職務執行を監査</p>
+                            <p>• 任期：<span class="highlight">4年</span>（非公開：最長10年）</p>
+                            <p>• 取締役等との兼任は不可</p>
+                        </div>
+
+                        <div class="feature-box pl-2 border-green-400 text-xs">
+                            <p class="font-bold text-green-300 mb-0.5">監査役会</p>
+                            <p>• 公開大会社で必要</p>
+                            <p>• <span class="highlight">3名以上</span>で<span class="highlight">半数以上</span>は社外監査役</p>
+                        </div>
+
+                        <div class="feature-box pl-2 border-purple-400 text-xs">
+                            <p class="font-bold text-purple-300 mb-0.5">会計監査人</p>
+                            <p>• <span class="highlight">大会社</span>は必須</p>
+                            <p>• <span class="highlight">公認会計士</span>か<span class="highlight">監査法人</span>に限定</p>
+                            <p>• 任期：1年（自動更新あり）</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comparison Table - Decision Requirements -->
+                <div class="col-span-2 section-card rounded-lg p-3 border-t-4 border-yellow-500">
+                    <h3 class="text-sm font-bold mb-2 text-yellow-300">決議要件比較表</h3>
+                    <table class="w-full text-xs border-collapse">
+                        <thead>
+                            <tr class="table-header">
+                                <th class="py-1 px-2 text-left border border-blue-800">決議の種類</th>
+                                <th class="py-1 px-2 text-center border border-blue-800">定足数</th>
+                                <th class="py-1 px-2 text-center border border-blue-800">賛成要件</th>
+                                <th class="py-1 px-2 text-left border border-blue-800">主な決議事項</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="table-row-odd">
+                                <td class="py-1 px-2 border border-blue-800 font-bold text-blue-300">普通決議</td>
+                                <td class="py-1 px-2 border border-blue-800 text-center">議決権の過半数</td>
+                                <td class="py-1 px-2 border border-blue-800 text-center">出席株主の議決権の<span class="highlight">過半数</span></td>
+                                <td class="py-1 px-2 border border-blue-800">取締役・会計参与の選任、計算書類の承認</td>
+                            </tr>
+                            <tr class="table-row-even">
+                                <td class="py-1 px-2 border border-blue-800 font-bold text-yellow-300">特別決議</td>
+                                <td class="py-1 px-2 border border-blue-800 text-center">議決権の過半数</td>
+                                <td class="py-1 px-2 border border-blue-800 text-center">出席株主の議決権の<span class="highlight">3分の2以上</span></td>
+                                <td class="py-1 px-2 border border-blue-800">株式併合、監査役解任、定款変更、事業譲渡、解散</td>
+                            </tr>
+                            <tr class="table-row-odd">
+                                <td class="py-1 px-2 border border-blue-800 font-bold text-red-300">特殊決議</td>
+                                <td class="py-1 px-2 border border-blue-800 text-center">議決権株主の<span class="highlight">頭数で2分の1以上</span></td>
+                                <td class="py-1 px-2 border border-blue-800 text-center">議決権の<span class="highlight">3分の2以上</span></td>
+                                <td class="py-1 px-2 border border-blue-800">株式譲渡制限を定めた定款の変更</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Right Column: Important Points -->
+            <div class="w-3/12 pl-4">
+                <div class="important-box p-3 rounded-lg mb-3">
+                    <div class="flex items-center mb-2">
+                        <i class="fas fa-exclamation-circle text-orange-400 text-lg mr-2"></i>
+                        <h3 class="font-bold text-orange-400">重要ポイント</h3>
+                    </div>
+                    <ul class="list-disc pl-4 text-xs space-y-2">
+                        <li class="pb-2 border-b border-orange-800">
+                            <span class="text-orange-300 font-bold">必須機関</span>：
+                            <p class="mt-0.5">株主総会と取締役のみ</p>
+                        </li>
+                        <li class="pb-2 border-b border-orange-800">
+                            <span class="text-orange-300 font-bold">人数要件</span>：
+                            <p class="mt-0.5">取締役会：<span class="highlight">3人以上</span></p>
+                            <p class="mt-0.5">監査役会：<span class="highlight">3人以上</span>（半数以上社外）</p>
+                        </li>
+                        <li class="pb-2 border-b border-orange-800">
+                            <span class="text-orange-300 font-bold">任期</span>：
+                            <p class="mt-0.5">取締役：<span class="highlight">2年以内</span></p>
+                            <p class="mt-0.5">監査役：<span class="highlight">4年</span></p>
+                            <p class="mt-0.5">会計監査人：<span class="highlight">1年</span>（自動更新あり）</p>
+                        </li>
+                        <li>
+                            <span class="text-orange-300 font-bold">決議要件の違い</span>：
+                            <div class="mt-1 flex flex-col space-y-1">
+                                <div class="bg-white bg-opacity-10 rounded px-2 py-1 text-xs">
+                                    <span class="font-bold">普通決議</span>: 過半数×過半数
+                                </div>
+                                <div class="bg-white bg-opacity-10 rounded px-2 py-1 text-xs">
+                                    <span class="font-bold">特別決議</span>: 過半数×<span class="highlight">2/3</span>
+                                </div>
+                                <div class="bg-white bg-opacity-10 rounded px-2 py-1 text-xs">
+                                    <span class="font-bold">特殊決議</span>: <span class="highlight">頭数1/2</span>×<span class="highlight">2/3</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-blue-800 bg-opacity-40 p-3 rounded-lg mb-3">
+                    <div class="flex items-center mb-2">
+                        <i class="fas fa-lightbulb text-yellow-300 text-lg mr-2"></i>
+                        <h3 class="font-bold text-yellow-300">試験対策</h3>
+                    </div>
+                    <ul class="list-disc pl-4 text-xs space-y-1">
+                        <li>株主総会の決議要件の違いを正確に区別する</li>
+                        <li>各機関の任期・必要人数を暗記する</li>
+                        <li>取締役会と代表取締役の関係を理解する</li>
+                        <li>大会社の特徴と必要機関を覚える</li>
+                        <li>監査役と取締役の兼任禁止を確実に押さえる</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-r from-green-900 to-blue-900 p-3 rounded-lg">
+                    <h3 class="font-bold text-white text-sm mb-1.5 flex items-center">
+                        <i class="fas fa-building mr-2"></i>
+                        大会社の定義
+                    </h3>
+                    <div class="space-y-1">
+                        <div class="bg-white bg-opacity-10 p-1.5 rounded text-xs flex items-center">
+                            <div class="icon-circle bg-blue-800 mr-2 flex-shrink-0">
+                                <i class="fas fa-yen-sign text-blue-300"></i>
+                            </div>
+                            <span>資本金<span class="highlight">5億円以上</span></span>
+                        </div>
+                        <div class="text-center text-xs my-0.5">または</div>
+                        <div class="bg-white bg-opacity-10 p-1.5 rounded text-xs flex items-center">
+                            <div class="icon-circle bg-blue-800 mr-2 flex-shrink-0">
+                                <i class="fas fa-balance-scale text-blue-300"></i>
+                            </div>
+                            <span>負債総額<span class="highlight">200億円以上</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-2 flex justify-between items-center text-xs text-blue-200">
+            <div>株式会社法概論 - 証券外務員二種試験対策</div>
+            <div>8</div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            mermaid.initialize({
+                startOnLoad: true,
+                theme: 'dark',
+                securityLevel: 'loose',
+                themeVariables: {
+                    primaryColor: '#2C5282',
+                    primaryTextColor: '#fff',
+                    primaryBorderColor: '#4299E1',
+                    lineColor: '#63B3ED',
+                    secondaryColor: '#ED8936',
+                    tertiaryColor: '#1A365D'
+                }
+            });
+        });
+    </script>
+</body>
+</html>

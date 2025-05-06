@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>組織の再編</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11.6.0/dist/mermaid.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            overflow: hidden;
+            background: linear-gradient(120deg, #2C5282 0%, #1A365D 100%);
+            color: white;
+            position: relative;
+        }
+        .title {
+            font-size: 36px;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0px 2px 6px rgba(0,0,0,0.3);
+        }
+        .section-card {
+            background-color: rgba(44, 82, 130, 0.3);
+            transition: all 0.3s ease;
+        }
+        .section-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+        }
+        .highlight {
+            color: #FFC107;
+            font-weight: bold;
+        }
+        .important-box {
+            background-color: rgba(237, 137, 54, 0.15);
+            border-left: 4px solid #ED8936;
+        }
+        .feature-box {
+            border-left: 3px solid;
+            transition: all 0.3s ease;
+        }
+        .feature-box:hover {
+            transform: translateX(3px);
+        }
+        .icon-box {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        .vs-box {
+            position: relative;
+        }
+        .vs-box::after {
+            content: "VS";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 32px;
+            height: 32px;
+            background-color: rgba(237, 137, 54, 0.9);
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide p-8 flex flex-col">
+        <!-- Header -->
+        <div class="mb-4">
+            <h1 class="title">第9章：組織の再編</h1>
+            <div class="w-24 h-1 bg-yellow-400 rounded mt-2"></div>
+        </div>
+
+        <!-- Main Content Container -->
+        <div class="flex flex-grow">
+            <!-- Left Column: Main Content -->
+            <div class="w-8/12 pr-4 flex flex-col space-y-3">
+                <!-- 1. 合併 -->
+                <div class="section-card rounded-lg p-3 border-l-4 border-blue-400">
+                    <h2 class="text-xl font-bold mb-2 flex items-center text-blue-300">
+                        <i class="fas fa-object-group mr-2"></i>
+                        合併
+                    </h2>
+
+                    <div class="flex">
+                        <div class="w-1/3 pr-2">
+                            <div class="h-full flex flex-col justify-between">
+                                <div class="feature-box pl-2 border-blue-400 bg-blue-900 bg-opacity-20 p-2 rounded-r-lg mb-2">
+                                    <p class="text-sm font-bold text-blue-300">新設合併</p>
+                                    <p class="text-xs">当事会社の全部が解散して新会社を設立</p>
+                                </div>
+
+                                <div class="feature-box pl-2 border-blue-400 bg-blue-900 bg-opacity-20 p-2 rounded-r-lg">
+                                    <p class="text-sm font-bold text-blue-300">吸収合併</p>
+                                    <p class="text-xs">当事会社の1つが存続して他の会社を吸収</p>
+                                </div>
+
+                                <div class="mt-2 bg-blue-800 bg-opacity-40 p-2 rounded-lg">
+                                    <p class="text-xs">解散会社の<span class="highlight">権利義務</span>は<span class="highlight">包括的</span>に移転</p>
+                                    <p class="text-xs">株主は<span class="highlight">株式または金銭</span>を交付</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="w-2/3 pl-2">
+                            <div class="h-full">
+                                <div class="mermaid bg-transparent" style="background: rgba(255,255,255,0.05); padding: 8px; border-radius: 8px;">
+flowchart TD
+    subgraph 新設合併
+        A1[会社A] --> |解散| C[新設会社]
+        B1[会社B] --> |解散| C
+    end
+
+    subgraph 吸収合併
+        A2[会社A] --> |存続| A2
+        B2[会社B] --> |解散| A2
+    end
+
+    style A1 fill:#4299e1,color:#fff
+    style B1 fill:#4299e1,color:#fff
+    style C fill:#68D391,color:#111
+    style A2 fill:#4299e1,color:#fff
+    style B2 fill:#4299e1,color:#fff
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. 会社の分割 -->
+                <div class="section-card rounded-lg p-3 border-l-4 border-green-400">
+                    <h2 class="text-xl font-bold mb-2 flex items-center text-green-300">
+                        <i class="fas fa-cut mr-2"></i>
+                        会社の分割
+                    </h2>
+
+                    <div class="grid grid-cols-2 gap-2">
+                        <div class="feature-box pl-2 border-green-400 bg-green-900 bg-opacity-20 p-2 rounded-r-lg">
+                            <p class="text-sm font-bold text-green-300">新設分割</p>
+                            <p class="text-xs">1部門を切り離し、<span class="highlight">別会社として独立</span></p>
+                            <div class="mermaid bg-transparent mt-2">
+flowchart LR
+    A[会社A] --> |部門X切離| B[新設会社X]
+
+    style A fill:#38b2ac,color:#fff
+    style B fill:#68D391,color:#111
+                            </div>
+                        </div>
+
+                        <div class="feature-box pl-2 border-green-400 bg-green-900 bg-opacity-20 p-2 rounded-r-lg">
+                            <p class="text-sm font-bold text-green-300">吸収分割</p>
+                            <p class="text-xs">切り離した部門を<span class="highlight">既存の別会社に合併</span></p>
+                            <div class="mermaid bg-transparent mt-2">
+flowchart LR
+    A[会社A] --> |部門X切離| B[既存会社B]
+
+    style A fill:#38b2ac,color:#fff
+    style B fill:#4299e1,color:#fff
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-2 mt-2">
+                        <div class="bg-green-900 bg-opacity-10 p-2 rounded-lg">
+                            <p class="text-xs font-bold text-green-300">手続き</p>
+                            <ul class="list-disc pl-4 text-xs">
+                                <li>分割計画書/吸収分割契約の作成</li>
+                                <li>株主総会の<span class="highlight">特別決議</span>による承認</li>
+                                <li>反対株主の<span class="highlight">株式買取請求権</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-green-900 bg-opacity-10 p-2 rounded-lg">
+                            <p class="text-xs font-bold text-green-300">その他</p>
+                            <ul class="list-disc pl-4 text-xs">
+                                <li>事業譲渡と異なり<span class="highlight">権利義務を一括承継</span></li>
+                                <li>分割無効の訴えは<span class="highlight">6か月以内</span>に提起</li>
+                                <li>無効判決の効力は過去に遡らない</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. 株式交換と 4. 事業の譲渡 -->
+                <div class="grid grid-cols-2 gap-3">
+                    <!-- 3. 株式交換 -->
+                    <div class="section-card rounded-lg p-3 border-l-4 border-yellow-400">
+                        <h2 class="text-lg font-bold mb-2 flex items-center text-yellow-300">
+                            <i class="fas fa-exchange-alt mr-2"></i>
+                            株式交換
+                        </h2>
+
+                        <div class="mb-2">
+                            <p class="text-xs">完全親子会社関係を創設する方法</p>
+                            <p class="text-xs">株式交換契約を結び、B社株主が持つB社株をA社株と交換</p>
+                        </div>
+
+                        <div class="mermaid bg-transparent" style="background: rgba(255,255,255,0.05); padding: 8px; border-radius: 8px;">
+flowchart TD
+    A[A社] -->|新株発行| B{B社株主}
+    B -->|B社株式| A
+    C[B社] -->|完全子会社化| A
+
+    style A fill:#d69e2e,color:#111
+    style B fill:#718096,color:#fff
+    style C fill:#4299e1,color:#fff
+                        </div>
+
+                        <div class="mt-2 bg-yellow-800 bg-opacity-40 p-2 rounded-lg">
+                            <p class="text-xs">A社は<span class="highlight">資金を使わずに</span>B社の<span class="highlight">完全親会社</span>となる</p>
+                        </div>
+                    </div>
+
+                    <!-- 4. 事業の譲渡 -->
+                    <div class="section-card rounded-lg p-3 border-l-4 border-purple-400">
+                        <h2 class="text-lg font-bold mb-2 flex items-center text-purple-300">
+                            <i class="fas fa-handshake mr-2"></i>
+                            事業の譲渡
+                        </h2>
+
+                        <div class="vs-box flex mb-3">
+                            <div class="w-1/2 pr-4 bg-purple-900 bg-opacity-20 p-2 rounded-l-lg">
+                                <p class="text-xs font-bold text-center text-purple-300">事業譲渡</p>
+                                <p class="text-xs text-center">財産を<span class="highlight">個別に移転</span></p>
+                            </div>
+                            <div class="w-1/2 pl-4 bg-blue-900 bg-opacity-20 p-2 rounded-r-lg">
+                                <p class="text-xs font-bold text-center text-blue-300">合併</p>
+                                <p class="text-xs text-center">権利義務を<span class="highlight">包括的に移転</span></p>
+                            </div>
+                        </div>
+
+                        <div class="bg-purple-900 bg-opacity-10 p-2 rounded-lg">
+                            <ul class="list-disc pl-4 text-xs space-y-1">
+                                <li>事業全部または<span class="highlight">重要な一部</span>の譲渡には株主総会の<span class="highlight">特別決議</span>が必要</li>
+                                <li>反対株主の<span class="highlight">株式買取請求権</span>あり</li>
+                                <li>事業全部を譲渡しても会社は<span class="highlight">当然には解散しない</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. 組織変更と解散 -->
+                <div class="section-card rounded-lg p-3 border-l-4 border-gray-400">
+                    <h2 class="text-lg font-bold mb-2 flex items-center text-gray-300">
+                        <i class="fas fa-sync-alt mr-2"></i>
+                        組織変更と解散
+                    </h2>
+
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="bg-gray-800 bg-opacity-30 p-2 rounded-lg">
+                            <p class="text-sm font-bold text-gray-300 mb-1">組織変更</p>
+                            <p class="text-xs">株式会社⇔合名会社/合資会社/合同会社の変更可能</p>
+                        </div>
+
+                        <div class="bg-gray-800 bg-opacity-30 p-2 rounded-lg">
+                            <p class="text-sm font-bold text-gray-300 mb-1">会社の解散</p>
+                            <ul class="list-disc pl-4 text-xs">
+                                <li>合併</li>
+                                <li>破産</li>
+                                <li>存続時期の満了</li>
+                                <li>株主総会の<span class="highlight">特別決議</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Important Points -->
+            <div class="w-4/12 pl-4">
+                <div class="important-box p-4 rounded-lg mb-4">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-exclamation-circle text-orange-400 text-xl mr-2"></i>
+                        <h3 class="font-bold text-orange-400">重要ポイント</h3>
+                    </div>
+                    <ul class="list-disc pl-5 text-sm space-y-3">
+                        <li class="pb-2 border-b border-orange-800">
+                            <span class="text-orange-300 font-bold">合併と分割の違い</span>
+                            <p class="mt-1">合併：<span class="highlight">複数</span>の会社が<span class="highlight">1つ</span>になる<br>分割：<span class="highlight">1つ</span>の会社から<span class="highlight">部門</span>を分ける</p>
+                        </li>
+                        <li class="pb-2 border-b border-orange-800">
+                            <span class="text-orange-300 font-bold">合併と事業譲渡の違い</span>
+                            <p class="mt-1">合併：権利義務を<span class="highlight">包括的</span>に移転<br>事業譲渡：財産を<span class="highlight">個別</span>に移転</p>
+                        </li>
+                        <li class="pb-2 border-b border-orange-800">
+                            <span class="text-orange-300 font-bold">株式交換</span>
+                            <p class="mt-1"><span class="highlight">資金不要</span>で完全親子会社関係を創設</p>
+                        </li>
+                        <li>
+                            <span class="text-orange-300 font-bold">各種再編手続きの決議要件</span>
+                            <p class="mt-1">いずれも<span class="highlight">特別決議</span>が必要</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-blue-800 bg-opacity-40 p-4 rounded-lg mb-4">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-lightbulb text-yellow-300 text-xl mr-2"></i>
+                        <h3 class="font-bold text-yellow-300">試験対策</h3>
+                    </div>
+                    <ul class="list-disc pl-5 text-sm space-y-2">
+                        <li>新設合併と吸収合併の違いを明確に理解する</li>
+                        <li>新設分割と吸収分割の定義を覚える</li>
+                        <li>事業譲渡と合併の法的な差異を理解する</li>
+                        <li>分割無効の訴えは<span class="highlight">6か月以内</span>であることを押さえる</li>
+                        <li>組織変更可能な会社形態の組み合わせを確認する</li>
+                        <li>株式交換の実務的メリット（<span class="highlight">資金不要</span>）を理解する</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-r from-blue-900 to-green-900 p-4 rounded-lg">
+                    <h3 class="font-bold text-white mb-2 flex items-center">
+                        <i class="fas fa-chart-bar mr-2"></i>
+                        各種再編の比較
+                    </h3>
+                    <div class="space-y-2">
+                        <div class="bg-white bg-opacity-10 p-2 rounded flex items-center">
+                            <div class="icon-box bg-blue-700 mr-3 flex-shrink-0">
+                                <i class="fas fa-object-group text-blue-300"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold">合併</p>
+                                <p class="text-xs">会社全体の統合、包括承継</p>
+                            </div>
+                        </div>
+                        <div class="bg-white bg-opacity-10 p-2 rounded flex items-center">
+                            <div class="icon-box bg-green-700 mr-3 flex-shrink-0">
+                                <i class="fas fa-cut text-green-300"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold">会社分割</p>
+                                <p class="text-xs">一部門の分離、包括承継</p>
+                            </div>
+                        </div>
+                        <div class="bg-white bg-opacity-10 p-2 rounded flex items-center">
+                            <div class="icon-box bg-yellow-700 mr-3 flex-shrink-0">
+                                <i class="fas fa-exchange-alt text-yellow-300"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold">株式交換</p>
+                                <p class="text-xs">株式の交換による親子関係創設</p>
+                            </div>
+                        </div>
+                        <div class="bg-white bg-opacity-10 p-2 rounded flex items-center">
+                            <div class="icon-box bg-purple-700 mr-3 flex-shrink-0">
+                                <i class="fas fa-handshake text-purple-300"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold">事業譲渡</p>
+                                <p class="text-xs">事業の移転、個別承継</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-3 flex justify-between items-center text-sm text-blue-200">
+            <div>株式会社法概論 - 証券外務員二種試験対策</div>
+            <div>11</div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            mermaid.initialize({
+                startOnLoad: true,
+                theme: 'dark',
+                securityLevel: 'loose',
+                themeVariables: {
+                    primaryColor: '#2C5282',
+                    primaryTextColor: '#fff',
+                    primaryBorderColor: '#4299E1',
+                    lineColor: '#63B3ED',
+                    secondaryColor: '#ED8936',
+                    tertiaryColor: '#1A365D'
+                }
+            });
+        });
+    </script>
+</body>
+</html>

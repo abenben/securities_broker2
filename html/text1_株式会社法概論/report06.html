@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>株式の譲渡と自己株式</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11.6.0/dist/mermaid.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            overflow: hidden;
+            background: linear-gradient(120deg, #2C5282 0%, #1A365D 100%);
+            color: white;
+            position: relative;
+        }
+        .title {
+            font-size: 36px;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0px 2px 6px rgba(0,0,0,0.3);
+        }
+        .section-card {
+            background-color: rgba(44, 82, 130, 0.3);
+            border-left: 4px solid;
+            transition: all 0.3s ease;
+        }
+        .section-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+        }
+        .highlight {
+            color: #FFC107;
+            font-weight: bold;
+        }
+        .important-box {
+            background-color: rgba(237, 137, 54, 0.15);
+            border-left: 4px solid #ED8936;
+        }
+        .icon-box {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        .process-step {
+            position: relative;
+            padding-bottom: 20px;
+        }
+        .process-step:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            left: 20px;
+            top: 50px;
+            bottom: 0;
+            width: 2px;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide p-10 flex flex-col">
+        <!-- Header -->
+        <div class="mb-6">
+            <h1 class="title">第4章：株式の譲渡と自己株式</h1>
+            <div class="w-24 h-1 bg-yellow-400 rounded mt-2"></div>
+        </div>
+
+        <!-- Main Content Container -->
+        <div class="flex flex-grow">
+            <!-- Left Column: Main Content -->
+            <div class="w-8/12 pr-6 flex flex-col space-y-5">
+                <!-- 1. 株式譲渡の自由と定款による制限 -->
+                <div class="section-card rounded-lg p-4 border-blue-400">
+                    <h2 class="text-xl font-bold mb-3 flex items-center text-blue-300">
+                        <i class="fas fa-exchange-alt mr-3"></i>
+                        株式譲渡の自由と定款による制限
+                    </h2>
+
+                    <div class="flex">
+                        <div class="w-1/2 pr-3">
+                            <div class="bg-blue-900 bg-opacity-20 p-3 rounded-lg mb-3">
+                                <p class="font-bold text-blue-300 mb-1">株式の強い譲渡性</p>
+                                <p class="text-sm">株主にとって投資回収は<span class="highlight">株式の譲渡による以外にない</span>ため、強い譲渡性が必要</p>
+                            </div>
+
+                            <div class="bg-blue-900 bg-opacity-20 p-3 rounded-lg mb-3">
+                                <p class="font-bold text-blue-300 mb-1">譲渡制限の設定</p>
+                                <ul class="list-disc pl-5 text-sm">
+                                    <li>全部の株式について制限可能</li>
+                                    <li>一部の種類の株式だけ制限も可能</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="w-1/2 pl-3">
+                            <div class="bg-orange-900 bg-opacity-30 p-3 rounded-lg border-l-4 border-orange-400">
+                                <p class="font-bold text-orange-300 mb-2">譲渡制限の定め：特殊決議</p>
+
+                                <div class="flex flex-col items-center mb-2">
+                                    <div class="bg-orange-800 bg-opacity-40 rounded-lg p-2 w-full text-center mb-2">
+                                        <span class="text-orange-300 font-bold">頭数</span>：議決権を行使できる株主の<span class="highlight">2分の1以上</span>
+                                    </div>
+                                    <i class="fas fa-plus text-orange-300 text-sm my-1"></i>
+                                    <div class="bg-orange-800 bg-opacity-40 rounded-lg p-2 w-full text-center">
+                                        <span class="text-orange-300 font-bold">議決権</span>：<span class="highlight">3分の2以上</span>の賛成
+                                    </div>
+                                </div>
+
+                                <p class="text-sm">要件は<span class="highlight">加重はできるが軽減はできない</span></p>
+                                <p class="text-sm">反対株主は持株の買取りを会社に請求可能</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. 自己株式（金庫株）の取得 -->
+                <div class="section-card rounded-lg p-4 border-purple-400">
+                    <h2 class="text-xl font-bold mb-3 flex items-center text-purple-300">
+                        <i class="fas fa-warehouse mr-3"></i>
+                        自己株式（金庫株）の取得
+                    </h2>
+
+                    <div class="flex">
+                        <div class="w-1/2 pr-3">
+                            <div class="bg-purple-900 bg-opacity-20 p-3 rounded-lg mb-3">
+                                <p class="font-bold text-purple-300 mb-1">自己株式取得の問題点</p>
+                                <ul class="list-disc pl-5 text-sm space-y-1">
+                                    <li>出資の払戻しと同様の効果</li>
+                                    <li>株価操作の懸念</li>
+                                    <li>取締役の地位防衛の手段に</li>
+                                    <li>株主間の不平等をもたらす可能性</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-purple-900 bg-opacity-20 p-3 rounded-lg">
+                                <p class="font-bold text-purple-300 mb-1">取得方法</p>
+                                <ul class="list-disc pl-5 text-sm">
+                                    <li>市場取引</li>
+                                    <li>公開買付け</li>
+                                    <li>特定の株主からの取得</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="w-1/2 pl-3">
+                            <div class="p-3 space-y-3">
+                                <!-- 決議方法 -->
+                                <div class="process-step flex">
+                                    <div class="icon-box bg-blue-900 mr-3">
+                                        <i class="fas fa-gavel text-blue-300"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-blue-300 mb-1">決議</p>
+                                        <p class="text-sm">取得の相手方を特定しない場合、<span class="highlight">株主総会の普通決議</span>で可能</p>
+                                    </div>
+                                </div>
+
+                                <!-- 財源制限 -->
+                                <div class="process-step flex">
+                                    <div class="icon-box bg-orange-900 mr-3">
+                                        <i class="fas fa-coins text-orange-300"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-orange-300 mb-1">財源制限</p>
+                                        <p class="text-sm border-l-2 border-orange-400 pl-2"><span class="highlight">配当に回すことのできる剰余金のみ</span>から取得可能</p>
+                                    </div>
+                                </div>
+
+                                <!-- ダイアグラム -->
+                                <div class="mt-4 bg-blue-900 bg-opacity-30 p-3 rounded-lg">
+                                    <div class="mermaid bg-transparent">
+flowchart LR
+    A[株主総会決議] --> B{取得対象}
+    B -->|特定なし| C[普通決議]
+    B -->|特定あり| D[特別な手続き]
+    C --> E[配当可能剰余金から取得]
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Important Points -->
+            <div class="w-4/12 pl-4">
+                <div class="important-box p-4 rounded-lg mb-4">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-exclamation-circle text-orange-400 text-xl mr-2"></i>
+                        <h3 class="font-bold text-orange-400">重要ポイント</h3>
+                    </div>
+                    <ul class="list-disc pl-5 text-sm space-y-3">
+                        <li class="pb-2 border-b border-orange-800">
+                            <span class="text-orange-300 font-bold">譲渡制限の特殊決議</span>
+                            <p class="mt-1">株主総会で<span class="highlight">頭数2分の1以上</span>かつ<span class="highlight">議決権3分の2以上</span>の賛成が必要</p>
+                        </li>
+                        <li class="pb-2 border-b border-orange-800">
+                            <span class="text-orange-300 font-bold">特殊決議要件の変更</span>
+                            <p class="mt-1"><span class="highlight">加重可・軽減不可</span>の原則を覚える</p>
+                        </li>
+                        <li>
+                            <span class="text-orange-300 font-bold">自己株式取得の財源制限</span>
+                            <p class="mt-1"><span class="highlight">配当可能な剰余金</span>からのみ取得可能</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-blue-800 bg-opacity-40 p-4 rounded-lg mb-4">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-lightbulb text-yellow-300 text-xl mr-2"></i>
+                        <h3 class="font-bold text-yellow-300">試験対策</h3>
+                    </div>
+                    <ul class="list-disc pl-5 text-sm space-y-2">
+                        <li>株式譲渡の自由と制限のバランスを理解する</li>
+                        <li>譲渡制限を設ける場合の決議要件を正確に覚える</li>
+                        <li>自己株式取得の財源制限は頻出事項</li>
+                        <li>自己株式取得の目的と問題点を整理する</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-r from-blue-900 to-purple-900 p-4 rounded-lg">
+                    <h3 class="font-bold text-white mb-1 flex items-center">
+                        <i class="fas fa-check-circle mr-2"></i>
+                        これだけは覚える
+                    </h3>
+                    <div class="flex flex-col space-y-2 mt-2">
+                        <div class="bg-white bg-opacity-10 p-2 rounded text-sm">
+                            譲渡制限：<span class="highlight">特殊決議</span>（2分の1 + 3分の2）
+                        </div>
+                        <div class="bg-white bg-opacity-10 p-2 rounded text-sm">
+                            自己株式財源：<span class="highlight">配当可能剰余金のみ</span>
+                        </div>
+                        <div class="bg-white bg-opacity-10 p-2 rounded text-sm">
+                            自己株式決議：原則<span class="highlight">株主総会普通決議</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-4 flex justify-between items-center text-sm text-blue-200">
+            <div>株式会社法概論 - 証券外務員二種試験対策</div>
+            <div>6</div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            mermaid.initialize({
+                startOnLoad: true,
+                theme: 'dark',
+                securityLevel: 'loose',
+                themeVariables: {
+                    primaryColor: '#2C5282',
+                    primaryTextColor: '#fff',
+                    primaryBorderColor: '#4299E1',
+                    lineColor: '#63B3ED',
+                    secondaryColor: '#ED8936',
+                    tertiaryColor: '#1A365D'
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>総まとめと試験対策</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            overflow: hidden;
+            background: linear-gradient(120deg, #2C5282 0%, #1A365D 100%);
+            color: white;
+            position: relative;
+        }
+        .title {
+            font-size: 38px;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0px 2px 6px rgba(0,0,0,0.3);
+        }
+        .highlight {
+            color: #FFC107;
+            font-weight: bold;
+        }
+        .key-point {
+            transition: all 0.3s ease;
+            border-left: 3px solid;
+        }
+        .key-point:hover {
+            transform: translateX(5px);
+            background-color: rgba(255,255,255,0.1);
+        }
+        .number-card {
+            transition: all 0.3s ease;
+            background-color: rgba(255,255,255,0.08);
+            border-radius: 8px;
+        }
+        .number-card:hover {
+            transform: scale(1.03);
+            background-color: rgba(255,255,255,0.12);
+        }
+        .chapter-heading {
+            font-weight: bold;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+        }
+        .chapter-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 8px;
+            flex-shrink: 0;
+        }
+        .essential-box {
+            background: linear-gradient(135deg, rgba(237,137,54,0.4) 0%, rgba(221,107,32,0.4) 100%);
+            border: 1px solid rgba(237,137,54,0.6);
+        }
+        .strategy-item {
+            border-left: 2px solid;
+            transition: all 0.2s ease;
+        }
+        .strategy-item:hover {
+            transform: translateX(3px);
+            background-color: rgba(255,255,255,0.08);
+        }
+        .numbers-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide p-8 flex flex-col">
+        <!-- Header -->
+        <div class="mb-6">
+            <h1 class="title">総まとめと試験対策</h1>
+            <div class="w-32 h-1 bg-yellow-400 rounded mt-2"></div>
+        </div>
+
+        <!-- Main Content Container -->
+        <div class="flex flex-grow">
+            <!-- Left Column: Key Points Summary -->
+            <div class="w-7/12 pr-6">
+                <h2 class="text-xl font-bold mb-3 flex items-center text-blue-300">
+                    <i class="fas fa-star mr-2"></i>
+                    会社法全体の重要ポイント
+                </h2>
+
+                <div class="grid grid-cols-2 gap-3 overflow-y-auto" style="max-height: 555px;">
+                    <!-- 1. 会社の種類と責任形態 -->
+                    <div class="key-point pl-3 border-blue-400 mb-2">
+                        <div class="chapter-heading text-blue-300">
+                            <div class="chapter-icon bg-blue-800">
+                                <span class="text-xs">1</span>
+                            </div>
+                            会社の種類と責任形態
+                        </div>
+                        <ul class="list-disc pl-5 text-xs space-y-1">
+                            <li><span class="highlight">有限責任</span>：出資額以上の責任なし</li>
+                            <li><span class="highlight">無限責任</span>：全財産で責任を負う</li>
+                            <li>株式会社は株主が<span class="highlight">有限責任</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- 2. 株式会社の特色と設立 -->
+                    <div class="key-point pl-3 border-green-400 mb-2">
+                        <div class="chapter-heading text-green-300">
+                            <div class="chapter-icon bg-green-800">
+                                <span class="text-xs">2</span>
+                            </div>
+                            株式会社の特色と設立
+                        </div>
+                        <ul class="list-disc pl-5 text-xs space-y-1">
+                            <li><span class="highlight">株主有限責任の原則</span></li>
+                            <li><span class="highlight">発起設立</span>と<span class="highlight">募集設立</span>の区別</li>
+                            <li>設立無効の訴えは<span class="highlight">2年以内</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- 3. 株式と株主の権利 -->
+                    <div class="key-point pl-3 border-yellow-400 mb-2">
+                        <div class="chapter-heading text-yellow-300">
+                            <div class="chapter-icon bg-yellow-800">
+                                <span class="text-xs">3</span>
+                            </div>
+                            株式と株主の権利
+                        </div>
+                        <ul class="list-disc pl-5 text-xs space-y-1">
+                            <li>株式分割：<span class="highlight">取締役会決議</span></li>
+                            <li>株式併合：<span class="highlight">株主総会特別決議</span></li>
+                            <li>単元未満株：議決権なし・経済的権利あり</li>
+                            <li>議決権制限株式：<span class="highlight">2分の1まで</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- 4. 株式譲渡と自己株式 -->
+                    <div class="key-point pl-3 border-orange-400 mb-2">
+                        <div class="chapter-heading text-orange-300">
+                            <div class="chapter-icon bg-orange-800">
+                                <span class="text-xs">4</span>
+                            </div>
+                            株式譲渡と自己株式
+                        </div>
+                        <ul class="list-disc pl-5 text-xs space-y-1">
+                            <li>譲渡制限：<span class="highlight">特殊決議</span>（頭数1/2+議決権2/3）</li>
+                            <li>自己株式取得財源：<span class="highlight">配当可能剰余金のみ</span></li>
+                            <li>金庫株：自己株式のこと</li>
+                        </ul>
+                    </div>
+
+                    <!-- 5. 株券と株主名簿 -->
+                    <div class="key-point pl-3 border-teal-400 mb-2">
+                        <div class="chapter-heading text-teal-300">
+                            <div class="chapter-icon bg-teal-800">
+                                <span class="text-xs">5</span>
+                            </div>
+                            株券と株主名簿
+                        </div>
+                        <ul class="list-disc pl-5 text-xs space-y-1">
+                            <li>原則：<span class="highlight">株券のない会社</span></li>
+                            <li>名義書換がないと対抗できない</li>
+                            <li>基準日と権利行使日：<span class="highlight">3か月以内</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- 6. 株式会社の機関 -->
+                    <div class="key-point pl-3 border-blue-400 mb-2">
+                        <div class="chapter-heading text-blue-300">
+                            <div class="chapter-icon bg-blue-800">
+                                <span class="text-xs">6</span>
+                            </div>
+                            株式会社の機関
+                        </div>
+                        <ul class="list-disc pl-5 text-xs space-y-1">
+                            <li>必須機関：<span class="highlight">株主総会</span>と<span class="highlight">取締役</span></li>
+                            <li>取締役会設置：<span class="highlight">3人以上</span>の取締役</li>
+                            <li>監査役会：<span class="highlight">3人以上</span>で半数以上が社外</li>
+                            <li>決議要件の3種類</li>
+                        </ul>
+                    </div>
+
+                    <!-- 7. 会社の計算 -->
+                    <div class="key-point pl-3 border-purple-400 mb-2">
+                        <div class="chapter-heading text-purple-300">
+                            <div class="chapter-icon bg-purple-800">
+                                <span class="text-xs">7</span>
+                            </div>
+                            会社の計算
+                        </div>
+                        <ul class="list-disc pl-5 text-xs space-y-1">
+                            <li>大会社：貸借対照表と<span class="highlight">損益計算書も</span>公告</li>
+                            <li>利益準備金：配当額の<span class="highlight">10分の1以上</span>を積立</li>
+                            <li>資本金減少：<span class="highlight">特別決議</span>（欠損填補は普通決議）</li>
+                        </ul>
+                    </div>
+
+                    <!-- 8. 新株発行と社債 -->
+                    <div class="key-point pl-3 border-indigo-400 mb-2">
+                        <div class="chapter-heading text-indigo-300">
+                            <div class="chapter-icon bg-indigo-800">
+                                <span class="text-xs">8</span>
+                            </div>
+                            新株発行と社債
+                        </div>
+                        <ul class="list-disc pl-5 text-xs space-y-1">
+                            <li>発行可能株式総数：発行済株式数の<span class="highlight">4倍まで</span></li>
+                            <li>発行済株式：<span class="highlight">4分の1以上</span>発行必要</li>
+                            <li>新株予約権付社債2種：行使後保有型・転換社債型</li>
+                        </ul>
+                    </div>
+
+                    <!-- 9. 組織再編 -->
+                    <div class="key-point pl-3 border-green-400 mb-2">
+                        <div class="chapter-heading text-green-300">
+                            <div class="chapter-icon bg-green-800">
+                                <span class="text-xs">9</span>
+                            </div>
+                            組織再編
+                        </div>
+                        <ul class="list-disc pl-5 text-xs space-y-1">
+                            <li>合併：<span class="highlight">包括的</span>に権利義務移転</li>
+                            <li>事業譲渡：財産を<span class="highlight">個別</span>に移転</li>
+                            <li>分割無効の訴え：<span class="highlight">6か月以内</span></li>
+                            <li>全て<span class="highlight">特別決議</span>が必要</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Numbers and Test Strategy -->
+            <div class="w-5/12 pl-4 flex flex-col space-y-4">
+                <!-- Numbers to Remember -->
+                <div>
+                    <h2 class="text-lg font-bold mb-3 flex items-center text-yellow-300">
+                        <i class="fas fa-calculator mr-2"></i>
+                        数値で覚えるべき重要項目
+                    </h2>
+
+                    <div class="numbers-grid">
+                        <div class="number-card p-2">
+                            <div class="flex items-center">
+                                <div class="w-9 h-9 bg-blue-700 rounded-full flex items-center justify-center mr-2 flex-shrink-0">
+                                    <i class="fas fa-calendar-day text-blue-300 text-sm"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-blue-200">株主総会招集通知</p>
+                                    <p class="text-sm font-bold"><span class="highlight">2週間前</span>まで</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="number-card p-2">
+                            <div class="flex items-center">
+                                <div class="w-9 h-9 bg-green-700 rounded-full flex items-center justify-center mr-2 flex-shrink-0">
+                                    <i class="fas fa-calendar-check text-green-300 text-sm"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-green-200">基準日と権利行使日</p>
+                                    <p class="text-sm font-bold"><span class="highlight">3か月以内</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="number-card p-2">
+                            <div class="flex items-center">
+                                <div class="w-9 h-9 bg-yellow-700 rounded-full flex items-center justify-center mr-2 flex-shrink-0">
+                                    <i class="fas fa-user-tie text-yellow-300 text-sm"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-yellow-200">取締役任期</p>
+                                    <p class="text-sm font-bold"><span class="highlight">2年以内</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="number-card p-2">
+                            <div class="flex items-center">
+                                <div class="w-9 h-9 bg-red-700 rounded-full flex items-center justify-center mr-2 flex-shrink-0">
+                                    <i class="fas fa-search text-red-300 text-sm"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-red-200">監査役任期</p>
+                                    <p class="text-sm font-bold"><span class="highlight">4年</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="number-card p-2">
+                            <div class="flex items-center">
+                                <div class="w-9 h-9 bg-purple-700 rounded-full flex items-center justify-center mr-2 flex-shrink-0">
+                                    <i class="fas fa-file-invoice-dollar text-purple-300 text-sm"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-purple-200">発行可能株式総数</p>
+                                    <p class="text-sm font-bold">発行済の<span class="highlight">4倍まで</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="number-card p-2">
+                            <div class="flex items-center">
+                                <div class="w-9 h-9 bg-indigo-700 rounded-full flex items-center justify-center mr-2 flex-shrink-0">
+                                    <i class="fas fa-building text-indigo-300 text-sm"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-indigo-200">大会社資本金</p>
+                                    <p class="text-sm font-bold"><span class="highlight">5億円以上</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="number-card p-2">
+                            <div class="flex items-center">
+                                <div class="w-9 h-9 bg-teal-700 rounded-full flex items-center justify-center mr-2 flex-shrink-0">
+                                    <i class="fas fa-gavel text-teal-300 text-sm"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-teal-200">設立無効の訴え</p>
+                                    <p class="text-sm font-bold"><span class="highlight">2年以内</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="number-card p-2">
+                            <div class="flex items-center">
+                                <div class="w-9 h-9 bg-orange-700 rounded-full flex items-center justify-center mr-2 flex-shrink-0">
+                                    <i class="fas fa-cut text-orange-300 text-sm"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-orange-200">分割無効の訴え</p>
+                                    <p class="text-sm font-bold"><span class="highlight">6か月以内</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Test Strategy -->
+                <div>
+                    <h2 class="text-lg font-bold mb-3 flex items-center text-green-300">
+                        <i class="fas fa-bullseye mr-2"></i>
+                        試験の傾向と対策ポイント
+                    </h2>
+
+                    <div class="space-y-2">
+                        <div class="strategy-item pl-3 border-blue-400 bg-blue-900 bg-opacity-10 p-2 rounded-r-lg">
+                            <p class="text-sm font-bold text-blue-300">決議要件の区別</p>
+                            <div class="grid grid-cols-3 gap-1 mt-1">
+                                <div class="bg-blue-900 bg-opacity-30 p-1.5 rounded text-center text-xs">
+                                    <span class="font-bold">普通決議</span><br>過半数×過半数
+                                </div>
+                                <div class="bg-yellow-900 bg-opacity-30 p-1.5 rounded text-center text-xs">
+                                    <span class="font-bold">特別決議</span><br>過半数×<span class="highlight">2/3</span>
+                                </div>
+                                <div class="bg-red-900 bg-opacity-30 p-1.5 rounded text-center text-xs">
+                                    <span class="font-bold">特殊決議</span><br>頭数<span class="highlight">1/2</span>×<span class="highlight">2/3</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="strategy-item pl-3 border-green-400 bg-green-900 bg-opacity-10 p-2 rounded-r-lg">
+                            <p class="text-sm font-bold text-green-300">期間制限の問題</p>
+                            <ul class="list-disc pl-5 text-xs mt-1">
+                                <li>各種期限に関する数値問題が出やすい</li>
+                                <li>特に「以内」か「以上」かの違いに注意</li>
+                                <li>権利行使の前後関係を把握する</li>
+                            </ul>
+                        </div>
+
+                        <div class="strategy-item pl-3 border-purple-400 bg-purple-900 bg-opacity-10 p-2 rounded-r-lg">
+                            <p class="text-sm font-bold text-purple-300">機関設計の組み合わせ</p>
+                            <ul class="list-disc pl-5 text-xs mt-1">
+                                <li>各機関の必要人数と任期</li>
+                                <li>大会社の義務（会計監査人、監査役会など）</li>
+                                <li>監査役と取締役・会計参与等の兼任禁止</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Essential Points to Remember -->
+                <div class="essential-box p-4 rounded-lg">
+                    <div class="flex items-center mb-2">
+                        <i class="fas fa-star text-yellow-300 text-2xl mr-2"></i>
+                        <h2 class="text-lg font-bold text-yellow-300">これだけは覚える</h2>
+                    </div>
+
+                    <ul class="list-disc pl-5 text-sm space-y-1.5">
+                        <li>株式会社の<span class="highlight">株主有限責任の原則</span></li>
+                        <li>株主総会の<span class="highlight">3種類の決議要件</span>の違い</li>
+                        <li><span class="highlight">特別決議</span>が必要な具体的事項</li>
+                        <li>取締役・監査役の<span class="highlight">任期の違い</span>（2年 vs 4年）</li>
+                        <li>大会社と通常の会社の<span class="highlight">公告義務の違い</span></li>
+                        <li>発行可能株式総数（<span class="highlight">4倍まで</span>）と発行済株式数（<span class="highlight">1/4以上</span>）</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-3 flex justify-between items-center text-sm text-blue-200">
+            <div>株式会社法概論 - 証券外務員二種試験対策</div>
+            <div>12</div>
+        </div>
+    </div>
+</body>
+</html>

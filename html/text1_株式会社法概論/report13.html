@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>謝辞と参考文献</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans JP', 'Helvetica Neue', Arial, sans-serif;
+        }
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            overflow: hidden;
+            background: linear-gradient(120deg, #2C5282 0%, #1A365D 100%);
+            color: white;
+            position: relative;
+        }
+        .title {
+            font-size: 42px;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0px 2px 6px rgba(0,0,0,0.3);
+        }
+        .highlight {
+            color: #FFC107;
+            font-weight: bold;
+        }
+        .card {
+            background-color: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(4px);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .card:hover {
+            background-color: rgba(255, 255, 255, 0.12);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        .icon-bg {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 16px;
+            background: linear-gradient(135deg, rgba(66, 153, 225, 0.8) 0%, rgba(49, 130, 206, 0.8) 100%);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 10px 16px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .contact-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
+        }
+        .watermark {
+            position: absolute;
+            opacity: 0.04;
+            transform: rotate(-15deg);
+            pointer-events: none;
+        }
+        .thank-you {
+            font-size: 28px;
+            background: linear-gradient(90deg, #FFC107, #FF9800);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-shadow: 0px 2px 8px rgba(255, 193, 7, 0.3);
+            display: inline-block;
+        }
+        .hint-item {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+        }
+        .hint-item::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 12px;
+            height: 12px;
+            background-color: rgba(237, 137, 54, 0.8);
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide p-12 flex flex-col">
+        <!-- Background Elements -->
+        <div class="watermark" style="font-size: 350px; top: 10%; left: 15%;">
+            <i class="fas fa-balance-scale"></i>
+        </div>
+        <div class="watermark" style="font-size: 300px; bottom: 10%; right: 15%;">
+            <i class="fas fa-chart-line"></i>
+        </div>
+
+        <!-- Header -->
+        <div class="mb-8 text-center">
+            <h1 class="title">謝辞と参考文献</h1>
+            <div class="w-40 h-1 bg-yellow-400 rounded mt-3 mx-auto"></div>
+        </div>
+
+        <!-- Main Content Container -->
+        <div class="flex-grow flex">
+            <!-- Left Column -->
+            <div class="w-1/2 pr-6 flex flex-col justify-between">
+                <!-- Acknowledgement -->
+                <div class="card p-6 rounded-lg mb-6">
+                    <div class="flex items-center mb-4">
+                        <div class="icon-bg">
+                            <i class="fas fa-award text-white text-2xl"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-blue-200">謝辞</h2>
+                    </div>
+
+                    <p class="text-lg mb-4">このプレゼンテーションは<span class="highlight">証券外務員二種試験対策</span>のために作成されました</p>
+
+                    <p class="text-lg">証券外務員試験の合格を目指す皆様の学習の一助となれば幸いです</p>
+
+                    <div class="mt-6 text-center">
+                        <p class="thank-you">合格を心より願っています！</p>
+                    </div>
+                </div>
+
+                <!-- Key Points Reminder -->
+                <div class="card p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="icon-bg">
+                            <i class="fas fa-star text-white text-2xl"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-blue-200">主要ポイントの再確認</h2>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="bg-blue-900 bg-opacity-20 p-4 rounded-lg border-l-4 border-blue-500">
+                            <p class="text-lg">株式会社法は<span class="highlight">金融商品取引法のベース</span>となる重要科目です</p>
+                        </div>
+
+                        <div class="bg-orange-900 bg-opacity-20 p-4 rounded-lg border-l-4 border-orange-500">
+                            <p class="text-lg">特に<span class="highlight">株主有限責任の原則</span>や<span class="highlight">株主総会の決議要件</span>などは試験で頻出します</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="w-1/2 pl-6 flex flex-col justify-between">
+                <!-- Study Hints -->
+                <div class="card p-6 rounded-lg mb-6">
+                    <div class="flex items-center mb-4">
+                        <div class="icon-bg">
+                            <i class="fas fa-lightbulb text-white text-2xl"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-blue-200">学習のヒント</h2>
+                    </div>
+
+                    <div class="space-y-5">
+                        <div class="hint-item">
+                            <p class="text-lg"><span class="highlight">暗記よりも、原則と例外</span>という視点で考えることが大切です</p>
+                        </div>
+
+                        <div class="hint-item">
+                            <p class="text-lg"><span class="highlight">各機関の役割や権限関係</span>を理解することで、細かい規定も覚えやすくなります</p>
+                        </div>
+
+                        <div class="hint-item">
+                            <p class="text-lg">数値は<span class="highlight">「〇〇以内」「〇〇以上」</span>の表現に特に注意して覚えましょう</p>
+                        </div>
+
+                        <div class="hint-item">
+                            <p class="text-lg">類似概念の<span class="highlight">違いを明確にする</span>ことで、試験の選択肢に迷わなくなります</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <div class="card p-6 rounded-lg">
+                    <div class="flex items-center mb-5">
+                        <div class="icon-bg">
+                            <i class="fas fa-envelope text-white text-2xl"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-blue-200">連絡先</h2>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope-open-text text-blue-300 text-xl mr-4"></i>
+                            <div>
+                                <p class="text-sm text-gray-300">メール</p>
+                                <p class="text-lg">houkouron-support@example.com</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fas fa-globe text-blue-300 text-xl mr-4"></i>
+                            <div>
+                                <p class="text-sm text-gray-300">Web</p>
+                                <p class="text-lg">www.shaken-study.example.com</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fas fa-book text-blue-300 text-xl mr-4"></i>
+                            <div>
+                                <p class="text-sm text-gray-300">参考書籍</p>
+                                <p class="text-lg">「証券外務員試験 合格ハンドブック」</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-6 flex justify-between items-center text-sm text-blue-200">
+            <div>株式会社法概論 - 証券外務員二種試験対策</div>
+            <div>13</div>
+        </div>
+    </div>
+</body>
+</html>

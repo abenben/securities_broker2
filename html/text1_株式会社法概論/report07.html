@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>株券と株主名簿</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            overflow: hidden;
+            background: linear-gradient(120deg, #2C5282 0%, #1A365D 100%);
+            color: white;
+            position: relative;
+        }
+        .title {
+            font-size: 36px;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0px 2px 6px rgba(0,0,0,0.3);
+        }
+        .section-card {
+            background-color: rgba(44, 82, 130, 0.3);
+            transition: all 0.3s ease;
+        }
+        .section-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+        }
+        .highlight {
+            color: #FFC107;
+            font-weight: bold;
+        }
+        .important-box {
+            background-color: rgba(237, 137, 54, 0.15);
+            border-left: 4px solid #ED8936;
+        }
+        .icon-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .feature-item {
+            border-left: 3px solid;
+            transition: all 0.3s ease;
+        }
+        .feature-item:hover {
+            transform: translateX(5px);
+        }
+        .timeline-item {
+            position: relative;
+        }
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 19px;
+            top: 40px;
+            height: calc(100% - 20px);
+            width: 2px;
+            background-color: rgba(99, 179, 237, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide p-10 flex flex-col">
+        <!-- Header -->
+        <div class="mb-6">
+            <h1 class="title">第5章：株券と株主名簿</h1>
+            <div class="w-24 h-1 bg-yellow-400 rounded mt-2"></div>
+        </div>
+
+        <!-- Main Content Container -->
+        <div class="flex flex-grow">
+            <!-- Left Column: Main Content -->
+            <div class="w-8/12 pr-6 flex flex-col space-y-4">
+                <!-- 1. 株券と不発行 -->
+                <div class="section-card rounded-lg p-4 border-l-4 border-blue-400">
+                    <h2 class="text-xl font-bold mb-3 flex items-center text-blue-300">
+                        <i class="fas fa-certificate mr-3"></i>
+                        株券と不発行
+                    </h2>
+
+                    <div class="flex space-x-4">
+                        <!-- 左側：原則と例外 -->
+                        <div class="w-1/2">
+                            <div class="bg-blue-900 bg-opacity-20 p-3 rounded-lg mb-3">
+                                <div class="flex items-center mb-2">
+                                    <div class="icon-circle bg-blue-800 mr-3">
+                                        <i class="fas fa-info-circle text-blue-300"></i>
+                                    </div>
+                                    <p class="font-bold text-blue-300">株券発行の原則と例外</p>
+                                </div>
+                                <div class="ml-10">
+                                    <p class="text-sm mb-2">会社法は<span class="highlight">株券のない会社</span>を原則としている</p>
+                                    <p class="text-sm">株券を発行する場合は<span class="highlight">定款</span>にその旨を定める</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-blue-900 bg-opacity-20 p-3 rounded-lg">
+                                <div class="flex items-center mb-2">
+                                    <div class="icon-circle bg-blue-800 mr-3">
+                                        <i class="fas fa-file-alt text-blue-300"></i>
+                                    </div>
+                                    <p class="font-bold text-blue-300">株券の記載事項</p>
+                                </div>
+                                <ul class="list-disc pl-10 text-sm">
+                                    <li>会社の<span class="highlight">商号</span></li>
+                                    <li><span class="highlight">株式数</span></li>
+                                    <li><span class="highlight">代表取締役</span>の署名または記名押印</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- 右側：名義の書換え -->
+                        <div class="w-1/2">
+                            <div class="bg-yellow-900 bg-opacity-20 p-3 rounded-lg border-l-4 border-yellow-500">
+                                <div class="flex items-center mb-2">
+                                    <div class="icon-circle bg-yellow-800 mr-3">
+                                        <i class="fas fa-pen-alt text-yellow-300"></i>
+                                    </div>
+                                    <p class="font-bold text-yellow-300">名義の書換え</p>
+                                </div>
+                                <p class="text-sm mb-3">株式の譲渡や相続があっても、<span class="highlight">株主名簿に名義書換えがなされるまで</span>は、会社との関係では移転が認められない</p>
+
+                                <!-- 図解 -->
+                                <div class="bg-blue-900 bg-opacity-30 p-3 rounded-lg flex flex-col items-center">
+                                    <div class="flex items-center w-full mb-2">
+                                        <div class="w-1/3 text-center p-2 bg-blue-800 bg-opacity-50 rounded-l-lg">
+                                            <i class="fas fa-user mr-1"></i>譲渡人
+                                        </div>
+                                        <div class="w-1/3 text-center">
+                                            <i class="fas fa-arrow-right text-blue-300"></i>
+                                        </div>
+                                        <div class="w-1/3 text-center p-2 bg-blue-800 bg-opacity-50 rounded-r-lg">
+                                            <i class="fas fa-user mr-1"></i>譲受人
+                                        </div>
+                                    </div>
+                                    <div class="text-center w-8 h-8 flex items-center justify-center">
+                                        <i class="fas fa-arrow-down text-blue-300"></i>
+                                    </div>
+                                    <div class="w-full p-2 bg-yellow-700 bg-opacity-50 rounded-lg text-center">
+                                        <i class="fas fa-book mr-1"></i><span class="highlight">株主名簿への名義書換え</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. 株主名簿と基準日 -->
+                <div class="section-card rounded-lg p-4 border-l-4 border-green-400">
+                    <h2 class="text-xl font-bold mb-3 flex items-center text-green-300">
+                        <i class="fas fa-book mr-3"></i>
+                        株主名簿と基準日
+                    </h2>
+
+                    <div class="flex">
+                        <!-- 左側：株主名簿 -->
+                        <div class="w-1/2 pr-3">
+                            <div class="bg-green-900 bg-opacity-20 p-3 rounded-lg mb-3">
+                                <p class="font-bold text-green-300 mb-2">株主名簿の役割</p>
+                                <ul class="list-disc pl-5 text-sm">
+                                    <li>株主総会の招集通知</li>
+                                    <li>剰余金の配当</li>
+                                    <li>新株割当通知</li>
+                                </ul>
+                                <p class="text-sm mt-2">これらは<span class="highlight">株主名簿に記載された株主</span>宛に送付</p>
+                            </div>
+                        </div>
+
+                        <!-- 右側：基準日 -->
+                        <div class="w-1/2 pl-3">
+                            <div class="bg-orange-900 bg-opacity-20 p-3 rounded-lg border-l-4 border-orange-400">
+                                <p class="font-bold text-orange-300 mb-2">基準日の設定</p>
+
+                                <div class="timeline-item pl-10 relative mb-3">
+                                    <div class="absolute left-0 top-0 bg-orange-600 rounded-full w-10 h-10 flex items-center justify-center">
+                                        <i class="fas fa-calendar-day text-white"></i>
+                                    </div>
+                                    <p class="text-sm"><span class="highlight">基準日</span>：権利を行使する株主を確定する日</p>
+                                </div>
+
+                                <div class="timeline-item pl-10 relative mb-3">
+                                    <div class="absolute left-0 top-0 bg-orange-600 rounded-full w-10 h-10 flex items-center justify-center">
+                                        <i class="fas fa-clock text-white"></i>
+                                    </div>
+                                    <p class="text-sm"><span class="highlight">制限</span>：基準日と権利行使日の間は<span class="highlight text-red-300">3か月以内</span></p>
+                                </div>
+
+                                <div class="timeline-item pl-10 relative">
+                                    <div class="absolute left-0 top-0 bg-orange-600 rounded-full w-10 h-10 flex items-center justify-center">
+                                        <i class="fas fa-bullhorn text-white"></i>
+                                    </div>
+                                    <p class="text-sm"><span class="highlight">臨時基準日</span>：定款で指定していない場合は<span class="highlight">2週間前</span>までに公告必要</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. 株券電子化 -->
+                <div class="section-card rounded-lg p-4 border-l-4 border-purple-400">
+                    <h2 class="text-xl font-bold mb-3 flex items-center text-purple-300">
+                        <i class="fas fa-microchip mr-3"></i>
+                        株券電子化
+                    </h2>
+
+                    <p class="text-sm mb-3">「社債、株式等の振替に関する法律」に基づく<span class="highlight">振替株式</span>の要件：</p>
+
+                    <div class="flex justify-center space-x-4">
+                        <div class="feature-item border-blue-400 bg-blue-900 bg-opacity-20 p-3 rounded-r-lg flex-1">
+                            <div class="flex items-center mb-1">
+                                <div class="w-8 h-8 bg-blue-800 rounded-full flex items-center justify-center mr-2">
+                                    <span class="font-bold text-blue-300">1</span>
+                                </div>
+                                <p class="font-bold text-blue-300">定款要件</p>
+                            </div>
+                            <p class="text-sm ml-10">発行会社の定款に<span class="highlight">株券を発行する旨の定めがない</span></p>
+                        </div>
+
+                        <div class="feature-item border-blue-400 bg-blue-900 bg-opacity-20 p-3 rounded-r-lg flex-1">
+                            <div class="flex items-center mb-1">
+                                <div class="w-8 h-8 bg-blue-800 rounded-full flex items-center justify-center mr-2">
+                                    <span class="font-bold text-blue-300">2</span>
+                                </div>
+                                <p class="font-bold text-blue-300">譲渡性</p>
+                            </div>
+                            <p class="text-sm ml-10"><span class="highlight">譲渡が制限されない</span>こと</p>
+                        </div>
+
+                        <div class="feature-item border-blue-400 bg-blue-900 bg-opacity-20 p-3 rounded-r-lg flex-1">
+                            <div class="flex items-center mb-1">
+                                <div class="w-8 h-8 bg-blue-800 rounded-full flex items-center justify-center mr-2">
+                                    <span class="font-bold text-blue-300">3</span>
+                                </div>
+                                <p class="font-bold text-blue-300">同意</p>
+                            </div>
+                            <p class="text-sm ml-10">振替機関での取扱いに発行会社が<span class="highlight">あらかじめ同意</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Important Points -->
+            <div class="w-4/12 pl-4">
+                <div class="important-box p-4 rounded-lg mb-4">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-exclamation-circle text-orange-400 text-xl mr-2"></i>
+                        <h3 class="font-bold text-orange-400">重要ポイント</h3>
+                    </div>
+                    <ul class="list-disc pl-5 text-sm space-y-3">
+                        <li class="pb-2 border-b border-orange-800">
+                            <span class="text-orange-300 font-bold">株券発行は例外</span>
+                            <p class="mt-1">会社法は<span class="highlight">株券のない会社</span>を原則としている</p>
+                        </li>
+                        <li class="pb-2 border-b border-orange-800">
+                            <span class="text-orange-300 font-bold">株主名簿の重要性</span>
+                            <p class="mt-1"><span class="highlight">名義書換えなければ</span>会社に対抗できない</p>
+                        </li>
+                        <li class="pb-2 border-b border-orange-800">
+                            <span class="text-orange-300 font-bold">基準日の制限</span>
+                            <p class="mt-1">基準日と権利行使日の間は<span class="highlight text-red-300">3か月以内</span></p>
+                        </li>
+                        <li>
+                            <span class="text-orange-300 font-bold">振替株式の3要件</span>
+                            <p class="mt-1">①株券発行の定めなし<br>②譲渡制限なし<br>③振替機関での取扱いに同意</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-blue-800 bg-opacity-40 p-4 rounded-lg mb-4">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-lightbulb text-yellow-300 text-xl mr-2"></i>
+                        <h3 class="font-bold text-yellow-300">試験対策</h3>
+                    </div>
+                    <ul class="list-disc pl-5 text-sm space-y-2">
+                        <li>株券発行会社と株券不発行会社の区別を理解する</li>
+                        <li>名義書換えの法的意義を正確に覚える</li>
+                        <li>基準日に関する<span class="highlight">期間制限</span>は必須事項</li>
+                        <li>振替株式の要件は明確に区別できるようにする</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-r from-green-900 to-blue-900 p-4 rounded-lg">
+                    <h3 class="font-bold text-white mb-2 flex items-center">
+                        <i class="fas fa-calendar-check mr-2"></i>
+                        基準日イメージ
+                    </h3>
+                    <div class="bg-white bg-opacity-10 p-3 rounded-lg">
+                        <div class="flex items-center justify-between">
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-green-800 rounded-full flex items-center justify-center mx-auto">
+                                    <i class="fas fa-calendar-day text-2xl text-green-300"></i>
+                                </div>
+                                <p class="text-sm mt-1">基準日</p>
+                            </div>
+                            <div class="flex-grow mx-4 relative">
+                                <div class="h-1 bg-gradient-to-r from-green-500 to-red-500 rounded"></div>
+                                <div class="absolute top-2 left-1/2 transform -translate-x-1/2 text-xs">
+                                    <span class="highlight">3か月以内</span>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-red-800 rounded-full flex items-center justify-center mx-auto">
+                                    <i class="fas fa-calendar-check text-2xl text-red-300"></i>
+                                </div>
+                                <p class="text-sm mt-1">権利行使日</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-4 flex justify-between items-center text-sm text-blue-200">
+            <div>株式会社法概論 - 証券外務員二種試験対策</div>
+            <div>7</div>
+        </div>
+    </div>
+</body>
+</html>
